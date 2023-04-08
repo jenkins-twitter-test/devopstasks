@@ -42,7 +42,7 @@ sudo chown -R www-data.www-data /var/www/laravelapp/storage
 sudo chown -R www-data.www-data /var/www/laravelapp/bootstrap/cache
 
 # configuring nginx to serve laravel application
-sudo cat > /etc/nginx/sites-available/laravelapp << 'EOL'
+sudo cat > /etc/nginx/sites-available/webapp.nakodevopsprojects.store << 'EOL'
 
 # prevent processing requests with undefined domains
 server {
@@ -88,7 +88,7 @@ server {
 EOL
 
 sudo unlink /etc/nginx/sites-enabled/default  
-sudo ln -s /etc/nginx/sites-available/laravelapp /etc/nginx/sites-enabled/ 
+sudo ln -s /etc/nginx/sites-available/webapp.nakodevopsprojects.store /etc/nginx/sites-enabled/ 
 sudo nginx -t
 sudo systemctl start nginx
 sudo systemctl enable nginx
